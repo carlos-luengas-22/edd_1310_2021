@@ -1,0 +1,40 @@
+class PriorityQueue:
+    def __init__(self):
+        self.__data = []
+
+    def is_empty(self):
+        return len(self.__data) == 0
+
+    def length(self):
+        return self.__size
+
+    def enqueue (self,elem):
+        self.__data.append(elem)
+
+    def dequeue (self):
+        if not self.is_empty():
+            return self.__data.pop(0)
+        else:
+            return None
+
+    def to_string(self):
+        cadena = ""
+        for elem in self.__data:
+            cadena = cadena + "| " + str(elem)
+        cadena = cadena +"|"
+        return cadena
+
+print("TAREA PriorityQueue")
+print('---------------------\n')
+pq = PriorityQueue()
+
+pq.enqueue(16)
+pq.enqueue(344)
+pq.enqueue(44)
+pq.enqueue(876)
+pq.enqueue(122)
+pq.enqueue(23)
+
+print(pq.to_string())
+while not pq.is_empty():
+          print(pq.dequeue())
